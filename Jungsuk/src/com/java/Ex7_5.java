@@ -14,7 +14,7 @@ public class Ex7_5 {
         car.drive();
 //        car.water();
         
-        // 조상->자손 (형변환 생략불가)
+        // 조상->자손 (형변환 생략불가)      
         fe2 = (FireEngine)car;                                  
         fe2.drive();
         fe2.water();
