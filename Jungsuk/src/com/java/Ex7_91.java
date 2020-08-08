@@ -22,15 +22,21 @@ class Fighter extends Unit2 implements Fightable{
     public void attact(Fightable f) {
         System.out.println(f + "를 공격");
     }
+
+    
+    // 싸울 수 있는 상대를 불러온다.
+    Fightable getFightble() {
+        Fighter f  = new Fighter(); // Fighter를 생성해서 반환
+        return f; // (Fightable)f
+    }
 }
+
 
 public class Ex7_91 {
 
     public static void main(String[] args) {
-//      Fighter f = new Fighter();
-        Fightable f = new Fighter();
-        f.move(100, 200);
-        f.attact(f);
-//      f.stop();
+      Fighter f = new Fighter();
+      Fightable f2 = f.getFightble();
+    
     }
 }
