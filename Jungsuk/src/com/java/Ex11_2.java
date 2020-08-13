@@ -5,6 +5,8 @@ import java.util.HashSet;
 class SutdaCard {
     int num;
     boolean isKwang;
+    
+    
     SutdaCard() {
         this(1, true);
     }
@@ -24,7 +26,7 @@ class SutdaCard {
         return num + ( isKwang ? "K":"");
     }
     public int hashCode() {
-        return toString().hashCode(); // String hashCode() . 클래스의 를 호출한다
+        return toString().hashCode(); // String 클래스의 hashCode()를 호출한다
     }
 }
 class Ex11_2 {
