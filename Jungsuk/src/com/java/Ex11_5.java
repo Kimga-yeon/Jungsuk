@@ -1,41 +1,29 @@
 package com.java;
-
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-class SutdaCard2 {
-    int num;
-    boolean isKwang;
-    SutdaCard2() {
-        this(1, true);
-    }
-    SutdaCard2(int num, boolean isKwang) {
-        this.num = num;
-        this.isKwang = isKwang;
-    }
-    public boolean equals(Object obj) {
-        if(obj instanceof SutdaCard) {
-            SutdaCard c = (SutdaCard)obj;
-            return num==c.num && isKwang==c.isKwang;
-        } else {
-            return false;
+class Ex11_5
+{
+    public static void main(String[] args)
+    {
+        Set set = new HashSet();
+        int[][] board = new int[5][5];
+        for(int i=0; set.size() < 25; i++) {
+            set.add((int)(Math.random()*30)+1+"");
         }
-    }
-    public String toString() {
-        return num + ( isKwang ? "K":"");
-    }
-    public int hashCode() {
-        return toString().hashCode(); // String hashCode() . 클래스의 를 호출한다
-    }
-}
-class Ex11_5 {
-    public static void main(String[] args) {
-        SutdaCard c1 = new SutdaCard(3,true);
-        SutdaCard c2 = new SutdaCard(3,true);
-        SutdaCard c3 = new SutdaCard(1,true);
-        HashSet set = new HashSet();
-        set.add(c1);
-        set.add(c2);
-        set.add(c3);
-        System.out.println(set);
-    }
+        
+        ArrayList list = new ArrayList(set);
+        Collections.shuffle(list);
+        Iterator it = list.iterator();
+        for(int i=0; i < board.length; i++) {
+            for(int j=0; j < board[i].length; j++) {
+                board[i][j] = Integer.parseInt((String)it.next());
+                System.out.print((board[i][j] < 10 ? " " : " ") + board[i][j]);
+            }
+            System.out.println();
+        }
+    } // main
 }
